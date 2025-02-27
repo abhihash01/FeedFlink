@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>FeedFlink</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="manifest" href="site.webmanifest">
+<!-- favicon.ico in the root directory -->
+<link rel="apple-touch-icon" href="icon.png">
+
+<meta name="theme-color" content="#030303">
+<!-- google fonts -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Poppins:ital,wght@0,300;0,500;0,700;1,300;1,400&display=swap"
+    rel="stylesheet">
+<link href="/static/RETNEWS-PRODUCTION/css/styles.css?537a1bbd0e5129401d28" rel="stylesheet">
+<style>
+    .flash-message {
+        padding: 10px;
+        margin-bottom: 1em;
+        border-radius: 4px;
+        color: #fff;
+    }
+    .flash-message.error {
+        background-color: #f44336; /* Red for errors */
+    }
+    .flash-message.success {
+        background-color: #4CAF50; /* Green for success */
+    }
+</style>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="bg-light">
+        <!-- navbar -->
+        <!-- Navbar menu  -->
+<!-- End Navbar menu  -->
+
+<!-- Navbar sidebar menu  -->
+<!-- End Navbar sidebar menu  -->
+        <!-- end navbar -->
+    </header>
+    <!-- end header -->
+
+    <!-- register -->
+    <section class="wrap__section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- register -->
+                    <!-- Form Register -->
+
+<div class="card mx-auto" style="max-width:520px;margin-top: 100px;margin-bottom: 150px;">
+    <article class="card-body">
+        <header class="mb-4">
+            <h4 class="card-title">Verify OTP</h4>
+        </header>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form method="post">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Enter the 6-digit code sent to your email:</label>
+                    <input type="text" class="form-control" id="confirmation_code" name="confirmation_code" value="{{ request.form.get('confirmation_code', '') }}" required>
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Verify </button>
+            </div> <!-- form-group// -->
+        </form>
+    </article><!-- card-body.// -->
+</div>
+<!-- <p class="text-center mt-4">Already have an account? <a href="{{ url_for('login') }}">Login</a></p> -->
+                    <!-- end register -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end register -->
+
+    <section class="wrapper__section p-0">
+        <div class="wrapper__section__components">
+            <!-- footer -->
+            <footer>
+    <!-- Footer bottom -->
+    <div class="wrapper__footer-bottom bg__footer-dark">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="border-top-1 bg__footer-bottom-section">
+                        <ul class="list-inline link-column">
+                            <li class="list-inline-item">
+                                <a href="/contact-us.html">
+                                    contact us
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#"> terms of use</a>
+                            </li>
+                        </ul>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <span>
+                                    Copyright © AMS 560: Group 1
+                                </span>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+        </div>
+    </section>
+
+
+    <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<script type="text/javascript" src="/static/RETNEWS-PRODUCTION/js/index.bundle.js?537a1bbd0e5129401d28"></script>
+</body>
+
+</html>
